@@ -49,7 +49,7 @@ module.exports = function (grunt) {
                     except: ['jQuery']
                 },
                 compress: {
-                    drop_console: true
+                    drop_console: false
                 },
                 sourceMap: true
             },
