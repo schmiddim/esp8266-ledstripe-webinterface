@@ -1,0 +1,14 @@
+{
+  "name": "silver frontend",
+  "description": "Silver prices",
+  "version": "0.0.0",
+  "homepage": "http://TODO",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "1.10.2",
+    "bootstrap": "~3.1.1",
+    "fontawesome": "~4.2.0"
+
+  }
+}
