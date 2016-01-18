@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="http://esp.light/assets/css/main.css">
 </head>
 <body>
-<h1> </h1>
+<h1></h1>
 <div class="container">
     <div class="header clearfix">
         <nav>
@@ -21,7 +21,7 @@
         <h3 class="text-muted">Light Control</h3>
     </div>
     <div class="jumbotron">
-        <form role="form" id="target" action="index.html">
+        <form role="form" id="target">
             <div class="form-group">
                 <label for="red">Red</label>
                 <input type="number" min="0" max="255" class="form-control" id="red" name="red" value="127">
@@ -35,15 +35,17 @@
                 <input type="number" min="0" max="255" class="form-control" id="blue" name="blue" value="127">
             </div>
 
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default">Change Color</button>
         </form>
-
-
+        <br/>
+        <button type="button" id="leds-off" class="btn btn-danger btn-lg">Leds off</button>
+        <button type="button" id="leds-on" class="btn  btn-primary btn-lg">Leds on</button>
     </div>
+</div>
 
-    <footer class="footer">
-        <p><a href="https://www.radikalblogger.de">© 2016 Michael Schmitt</a></p>
-    </footer>
+<footer class="footer">
+    <p><a href="https://www.radikalblogger.de">© 2016 Michael Schmitt</a></p>
+</footer>
 
 </div>
 <script src="http://esp.light/assets/scripts/theme.min.js"></script>
