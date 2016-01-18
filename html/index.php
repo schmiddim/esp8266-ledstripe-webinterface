@@ -47,6 +47,12 @@ define('DOMAIN', 'http://esp.light');
 		<br/>
 		<button type="button" id="leds-off" class="btn btn-danger btn-lg"><i class="loading-spinner fa fa-spinner fa-spin"></i> Leds off</button>
 		<button type="button" id="leds-on" class="btn  btn-primary btn-lg"><i class="loading-spinner fa fa-spinner fa-spin"></i> Leds on</button>
+		<br/>
+		<h2>Last Commands</h2>
+		<ul id="lastCommands">
+
+
+		</ul>
 	</div>
 	<footer class="footer">
 		<p><a href="https://www.radikalblogger.de">© 2016 Michael Schmitt</a></p>
