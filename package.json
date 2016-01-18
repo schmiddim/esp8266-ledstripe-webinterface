@@ -1,0 +1,19 @@
+{
+  "name": "esplight",
+  "version": "0.3.0",
+
+  "repository": {
+    "type": "git",
+    "url": "git://not-displayed-here.com"
+  },
+  "devDependencies": {
+    "grunt-cli": "*",
+    "grunt": "*",
+    "grunt-contrib-cssmin": "0.10.0",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-contrib-uglify": "0.6.0",
+    "clean-css": "2.2.8",
+    "grunt-contrib-copy": "0.7.0",
+    "grunt-ngmin" :"*"
+  }
+}
