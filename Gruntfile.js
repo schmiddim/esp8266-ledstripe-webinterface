@@ -5,19 +5,10 @@ module.exports = function (grunt) {
             css: {
                 files: [
                     'assets/*.css'
-                    ,'app/js/**.js'
+                    ,'scripts/*.js'
 
                 ],
-                tasks: ['cssmin']
-            },
-            ng:{
-                files: [
-                    'assets/*.css'
-                    ,'app/js/**.js'
-
-                ],
-                tasks: ['ngmin']
-
+                tasks: ['cssmin', 'uglify']
             },
             js: {
                 files: [
@@ -26,25 +17,7 @@ module.exports = function (grunt) {
                 tasks: ['uglify']
             }
         },
-        //@todo minify angular
-        ngmin: {
-            controllers: {
-                src: ['app/js/controllers.js'],
-                dest: 'js/controllers.js'
 
-            },
-            directives: {
-                expand: true,
-                cwd: 'test/src',
-                src: ['directives/**/*.js'],
-                dest: 'test/generated'
-            },
-            services: {
-                src: ['app/js/services/*.js'],
-                dest: 'js/services.js'
-            }
-
-        },
         copy: {
             dist: {
                 files: [
@@ -53,7 +26,7 @@ module.exports = function (grunt) {
                         dot: true,
                         cwd: 'bower_components/fontawesome/fonts',
                         src: ['**'],
-                        dest: 'fonts'
+                        dest: 'html/assets/fonts'
                     }
                 ]
             }
@@ -61,8 +34,8 @@ module.exports = function (grunt) {
         cssmin: {
             theme: {
                 files: {
-                    'css/main.css': [
-                        'assets/main.css',
+                    'html/assets/css/main.css': [
+                        'html/assets/main.css',
                         'bower_components/fontawesome/css/font-awesome.css',
                         'bower_components/bootstrap/dist/css/bootstrap.css'
 
@@ -82,9 +55,10 @@ module.exports = function (grunt) {
             },
             jslibraries: {
                 files: {
-                    'js/theme.min.js': [
+                    'html/assets/scripts/theme.min.js': [
                         'bower_components/jquery/jquery.min.js',
-                        'bower_components/bootstrap/dist/js/bootstrap.min.js'
+                        'bower_components/bootstrap/dist/js/bootstrap.min.js',
+                        'scripts/main.js'
                     ]
                 }
             }
@@ -96,6 +70,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-ngmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.registerTask('build', ['cssmin','ngmin', 'uglify','copy:dist']);
+    grunt.registerTask('build', ['cssmin', 'uglify','copy:dist']);
 
 }

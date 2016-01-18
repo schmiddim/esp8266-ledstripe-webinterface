@@ -50,3 +50,4 @@ crashlytics-build.properties
 npm-debug.log
 node_modules
 bower_components
+html/assets

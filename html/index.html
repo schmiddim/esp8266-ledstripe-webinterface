@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Lights</title>
-    <script src="http://esp.light/script/main.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+    <link rel="stylesheet" href="http://esp.light/assets/css/main.css">
 </head>
 <body>
+<h1>Hello, world!</h1>
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="#">Home</a></li>
+                <li role="presentation"><a href="#">About</a></li>
+                <li role="presentation"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">Light Control</h3>
+    </div>
+    <div class="jumbotron">
+        <form role="form">
+            <div class="form-group">
+                <label for="red">Red</label>
+                <input type="number" min="0" max="255" class="form-control" id="red" value="127">
+            </div>
+            <div class="form-group">
+                <label for="green">Green</label>
+                <input type="number" min="0" max="255" class="form-control" id="green" value="127">
+            </div>
+            <div class="form-group">
+                <label for="blue">Blue</label>
+                <input type="number" min="0" max="255" class="form-control" id="blue" value="127">
+            </div>
 
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+
+    </div>
+
+
+
+    <footer class="footer">
+        <p>© 2016 Michael Schmitt</p>
+    </footer>
+
+</div>
+<script src="http://esp.light/assets/scripts/theme.min.js"></script>
+
 </body>
 </html>
