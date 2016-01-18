@@ -1,7 +1,9 @@
 <?php
 
-
-$str=file_get_contents('html/index.html');
+ob_start();
+include "html/index.php";
+$str = ob_get_contents();
+ob_end_clean();
 
 $str= str_replace("\"", '\"', $str);
 $str = preg_replace('!\s+!', ' ', $str);
