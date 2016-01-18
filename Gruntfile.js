@@ -4,7 +4,7 @@ module.exports = function (grunt) {
         watch: {
             css: {
                 files: [
-                    'assets/*.css'
+                    'css/*.css'
                     ,'scripts/*.js'
 
                 ],
@@ -35,9 +35,9 @@ module.exports = function (grunt) {
             theme: {
                 files: {
                     'html/assets/css/main.css': [
-                        'html/assets/main.css',
                         'bower_components/fontawesome/css/font-awesome.css',
-                        'bower_components/bootstrap/dist/css/bootstrap.css'
+                        'bower_components/bootstrap/dist/css/bootstrap.css',
+                        'css/main.css'
 
                     ]
                 }
