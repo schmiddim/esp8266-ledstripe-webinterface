@@ -22,8 +22,6 @@ app.controller('formCtrl', ['$scope', 'communicateWithESP', function ($scope, co
 
     this.turnLightOn = function () {
         communicateWithESP.submitCommand({red: 127, green: 127, blue: 127});
-
-
     };
 
 }]);
