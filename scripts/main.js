@@ -1,9 +1,9 @@
-//var url = 'http://192.168.0.167/led-cmd';
-var url = '/bla.php';
+var url = 'http://192.168.0.167/led-cmd';
+//var url = '/bla.php';
 var app = angular.module('myApp', []);
 
 
-app.controller('formCtrl', ['$scope', '$http', 'transformRequestAsFormPost', 'communicateWithESP', function ($scope, $http, transformRequestAsFormPost, communicateWithESP) {
+app.controller('formCtrl', ['$scope', 'communicateWithESP', function ($scope, communicateWithESP) {
     $scope.color = {
         red: 255,
         green: 127,
@@ -34,7 +34,7 @@ app.controller('formCtrl', ['$scope', '$http', 'transformRequestAsFormPost', 'co
     };
 
 }]);
-app.factory('communicateWithESP', function () {
+app.factory('communicateWithESP', ['$http', 'transformRequestAsFormPost', function ($http,transformRequestAsFormPost) {
     return {
         submitCommand: function (colorValues) {
             console.log(colorValues);
@@ -53,7 +53,7 @@ app.factory('communicateWithESP', function () {
             });
         }
     }
-});
+}]);
 
 /**
  * @see http://www.bennadel.com/blog/2615-posting-form-data-with-http-in-angularjs.htm
