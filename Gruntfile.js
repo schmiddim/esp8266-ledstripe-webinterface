@@ -58,7 +58,8 @@ module.exports = function (grunt) {
                     'html/assets/scripts/theme.min.js': [
 
                         'bower_components/angular/angular.min.js',
-                        'bower_components/angular-bootstrap/iui-bootstrap.min.js',
+                        'bower_components/angular-bootstrap/ui-bootstrap.min.js',
+                        'bower_components/angular-local-storage/dist/angular-local-storage.js',
                         'scripts/main.js'
                     ]
                 }

@@ -1,7 +1,7 @@
 var url = 'http://192.168.0.167/led-cmd';
 //var url = '/bla.php';
-var app = angular.module('myApp', []);
-
+var app = angular.module('myApp', ['LocalStorageModule']);
+//@todo local storage
 
 app.controller('formCtrl', ['$scope', 'communicateWithESP', function ($scope, communicateWithESP) {
     $scope.color = {
@@ -14,7 +14,6 @@ app.controller('formCtrl', ['$scope', 'communicateWithESP', function ($scope, co
     this.submitValues = function () {
         communicateWithESP.submitCommand($scope.color);
     };
-
     this.turnLightOff = function () {
         communicateWithESP.submitCommand({red: 0, green: 0, blue: 0});
 
