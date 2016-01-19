@@ -6,29 +6,25 @@ var app = angular.module('myApp', []);
 app.controller('formCtrl', ['$scope', 'communicateWithESP', function ($scope, communicateWithESP) {
     $scope.color = {
         red: 255,
-        green: 127,
-        blue: 127
+        green: 0,
+        blue: 40
 
     };
 
     this.submitValues = function () {
-        console.log($scope.color);
+        communicateWithESP.submitCommand($scope.color);
     };
 
     this.turnLightOff = function () {
         $scope.color.red = 0;
         $scope.color.green = 0;
         $scope.color.blue = 0;
-        console.log($scope.color);
+        communicateWithESP.submitCommand({red:0, green:0, blue:0});
 
     };
 
     this.turnLightOn = function () {
-        $scope.color.red = 127;
-        $scope.color.green = 127;
-        $scope.color.blue = 127;
-
-        communicateWithESP.submitCommand($scope.color);
+        communicateWithESP.submitCommand({red:127, green:127, blue:127});
 
 
     };

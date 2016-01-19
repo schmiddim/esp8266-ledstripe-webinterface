@@ -2,7 +2,7 @@
 /**
  * enter your domain without trailing slash
  */
-define('DOMAIN', 'http://ng.local');
+define('DOMAIN', 'http://esp.light');
 ?>
 
 <!DOCTYPE html>
