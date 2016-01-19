@@ -16,21 +16,18 @@ app.controller('formCtrl', ['$scope', 'communicateWithESP', function ($scope, co
     };
 
     this.turnLightOff = function () {
-        $scope.color.red = 0;
-        $scope.color.green = 0;
-        $scope.color.blue = 0;
-        communicateWithESP.submitCommand({red:0, green:0, blue:0});
+        communicateWithESP.submitCommand({red: 0, green: 0, blue: 0});
 
     };
 
     this.turnLightOn = function () {
-        communicateWithESP.submitCommand({red:127, green:127, blue:127});
+        communicateWithESP.submitCommand({red: 127, green: 127, blue: 127});
 
 
     };
 
 }]);
-app.factory('communicateWithESP', ['$http', 'transformRequestAsFormPost', function ($http,transformRequestAsFormPost) {
+app.factory('communicateWithESP', ['$http', 'transformRequestAsFormPost', function ($http, transformRequestAsFormPost) {
     return {
         submitCommand: function (colorValues) {
             console.log(colorValues);
