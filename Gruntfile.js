@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             css: {
                 files: [
                     'css/*.css'
-                    ,'scripts/*.js'
+                    , 'scripts/*.js'
 
                 ],
                 tasks: ['cssmin', 'uglify']
@@ -56,8 +56,9 @@ module.exports = function (grunt) {
             jslibraries: {
                 files: {
                     'html/assets/scripts/theme.min.js': [
-                        'bower_components/jquery/jquery.min.js',
-                        'bower_components/bootstrap/dist/js/bootstrap.min.js',
+
+                        'bower_components/angular/angular.min.js',
+                        'bower_components/angular-bootstrap/iui-bootstrap.min.js',
                         'scripts/main.js'
                     ]
                 }
@@ -70,6 +71,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-ngmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.registerTask('build', ['cssmin', 'uglify','copy:dist']);
+    grunt.registerTask('build', ['cssmin', 'uglify', 'copy:dist']);
 
 }

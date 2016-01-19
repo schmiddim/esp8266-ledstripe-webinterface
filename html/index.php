@@ -2,7 +2,7 @@
 /**
  * enter your domain without trailing slash
  */
-define('DOMAIN', 'http://esp.light');
+define('DOMAIN', 'http://ng.local');
 ?>
 
 <!DOCTYPE html>
@@ -14,8 +14,7 @@ define('DOMAIN', 'http://esp.light');
 	<title>ESP8266 LED Control</title>
 	<link rel="stylesheet" href="<?php echo DOMAIN;?>/assets/css/main.css">
 </head>
-<body>
-<h1></h1>
+<body ng-app="myApp">
 <div class="container">
 	<div class="header clearfix">
 		<nav>
@@ -27,26 +26,26 @@ define('DOMAIN', 'http://esp.light');
 		</nav>
 		<h3 class="text-muted">Light Control</h3>
 	</div>
-	<div class="jumbotron">
-		<form role="form" id="target">
+	<div class="jumbotron" ng-controller="formCtrl as FormController">
+		<form role="form" id="target"  ng-submit="FormController.submitValues()">
 			<div class="form-group">
 				<label for="red">Red</label>
-				<input type="number" min="0" max="255" class="form-control" id="red" name="red" value="127">
+				<input type="number" min="0" max="255" class="form-control"  name="red" ng-model="color.red" value="127">
 			</div>
 			<div class="form-group">
 				<label for="green">Green</label>
-				<input type="number" min="0" max="255" class="form-control" id="green" name="green" value="127">
+				<input type="number" min="0" max="255" class="form-control" name="green" ng-model="color.green" value="127">
 			</div>
 			<div class="form-group">
 				<label for="blue">Blue</label>
-				<input type="number" min="0" max="255" class="form-control" id="blue" name="blue" value="127">
+				<input type="number" min="0" max="255" class="form-control"  name="blue"  ng-model="color.blue" value="127">
 			</div>
 
-			<button  id="btnSubmit" type="submit" class="btn btn-default"><i class="loading-spinner fa fa-spinner fa-spin"></i> Change Color</button>
+			<button   type="submit" class="btn btn-default" ><i class="loading-spinner fa fa-spinner fa-spin"></i> Change Color</button>
 		</form>
 		<br/>
-		<button type="button" id="leds-off" class="btn btn-danger btn-lg"><i class="loading-spinner fa fa-spinner fa-spin"></i> Leds off</button>
-		<button type="button" id="leds-on" class="btn  btn-primary btn-lg"><i class="loading-spinner fa fa-spinner fa-spin"></i> Leds on</button>
+		<button type="button" id="leds-off" class="btn btn-danger btn-lg"  ng-click="FormController.turnLightOff()"><i class="loading-spinner fa fa-spinner fa-spin"></i> Leds off</button>
+		<button type="button" id="leds-on" class="btn  btn-primary btn-lg"  ng-click="FormController.turnLightOn()"><i class="loading-spinner fa fa-spinner fa-spin"></i> Leds on</button>
 	</div>
 	<footer class="footer">
 		<p><a href="https://www.radikalblogger.de">© 2016 Michael Schmitt</a></p>
